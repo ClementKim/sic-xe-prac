@@ -1,0 +1,38 @@
+00000            MAIN  START   0    
+00000                  EXTREF  STINIT    
+00000                  EXTREF  PUSH    
+00000                  EXTREF  POP    
+                  
+00000  010100          LDA     #256    
+00003  4B100000       +JSUB    STINIT    
+                  
+00007  010011          LDA     #17    
+0000A  4B100000       +JSUB    PUSH    
+                  
+0000E  010022          LDA     #34    
+00011  4B100000       +JSUB    PUSH    
+                  
+00015  010033          LDA     #51    
+00018  4B100000       +JSUB    PUSH    
+                  
+0001C  010044          LDA     #68    
+0001F  4B100000       +JSUB    PUSH    
+                  
+00023  4B100000       +JSUB    POP    
+00027  0F2018          STA     RES1    
+                  
+0002A  4B100000       +JSUB    POP    
+0002E  0F2014          STA     RES2    
+                  
+00031  4B100000       +JSUB    POP    
+00035  0F2010          STA     RES3    
+                  
+00038  4B100000       +JSUB    POP    
+0003C  0F200C          STA     RES4    
+                  
+0003F  3F2FFD    A     J       A    
+                  
+00042  0000AA    RES1  WORD    170    
+00045  0000AA    RES2  WORD    170    
+00048  0000AA    RES3  WORD    170    
+0004B  0000AA    RES4  WORD    170    

@@ -1,0 +1,32 @@
+00000            fact  START   0    
+00000                  EXTREF  push    
+00000                  EXTREF  pop    
+00000                  EXTDEF  res    
+                  
+00000  290001          COMP    #1    
+00003  332031          JEQ     exit    
+00006  0F2034          STA     tmpA    
+00009  172034          STL     tmpL    
+                  
+0000C  4B100000       +JSUB    push    
+00010  03202D          LDA     tmpL    
+00013  4B100000       +JSUB    push    
+00017  032023          LDA     tmpA    
+0001A  1D0001          SUB     #1    
+0001D  4B2FE0          JSUB    fact    
+                  
+00020  4B100000       +JSUB    pop    
+00024  0F2019          STA     tmpL    
+00027  4B100000       +JSUB    pop    
+                  
+0002B  23200C          MUL     res    
+0002E  0F2009          STA     res    
+00031  0B200C          LDL     tmpL    
+00034  4F0000          RSUB        
+                  
+00037  4F0000    exit  RSUB        
+                  
+0003A  000001    res   WORD    1    
+0003D  000000    tmpA  RESW    1    
+00040  000000    tmpL  RESW    1    
+00043  00....00  gap   RESW    64    

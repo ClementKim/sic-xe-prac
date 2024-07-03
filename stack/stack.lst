@@ -1,0 +1,22 @@
+00000            STACK     START   0    
+00000                      EXTDEF  STINIT    
+00000                      EXTDEF  PUSH    
+00000                      EXTDEF  POP    
+                  
+00000  0F2021    STINIT    STA     STACKPTR    
+00003  4F0000              RSUB        
+                  
+00006  0E201B    PUSH      STA     @STACKPTR    
+00009  032018              LDA     STACKPTR    
+0000C  190003              ADD     #3    
+0000F  0F2012              STA     STACKPTR    
+00012  4F0000              RSUB        
+                  
+00015  03200C    POP       LDA     STACKPTR    
+00018  1D0003              SUB     #3    
+0001B  0F2006              STA     STACKPTR    
+0001E  022003              LDA     @STACKPTR    
+00021  4F0000              RSUB        
+                  
+00024  000000    STACKPTR  RESW    1    
+00027                      END     STACK    

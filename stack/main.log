@@ -1,0 +1,29 @@
+***** Section <default> *****
+Stats: size=78  blocks=78  symbols=9  literals=0  relocations=9
+Blocks
+    name        start   size  #ins #dir #sto
+    <default>   00000  0004E    19    8    0
+Symbols
+    name        hex       dec  scope     kind      type      description
+    A        00003F        63  local     relative  code      label
+    MAIN     000000         0  exported  relative  code      label
+    POP      000000         0  imported  relative  notlabel  
+    PUSH     000000         0  imported  relative  notlabel  
+    RES1     000042        66  local     relative  data      label
+    RES2     000045        69  local     relative  data      label
+    RES3     000048        72  local     relative  data      label
+    RES4     00004B        75  local     relative  data      label
+    STINIT   000000         0  imported  relative  notlabel  
+Literals
+    label   definition
+Relocations
+    address length flag symbol
+    00004        5  +    STINIT
+    0000B        5  +    PUSH
+    00012        5  +    PUSH
+    00019        5  +    PUSH
+    00020        5  +    PUSH
+    00024        5  +    POP
+    0002B        5  +    POP
+    00032        5  +    POP
+    00039        5  +    POP
